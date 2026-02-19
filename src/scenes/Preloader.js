@@ -1,8 +1,8 @@
-import { Scene } from "phaser";
+import Phaser from "phaser";
 
-export class PreloaderScene extends Scene {
+export default class Preloader extends Phaser.Scene {
   constructor() {
-    super("PreloaderScene");
+    super("Preloader");
   }
 
   preload() {
@@ -24,6 +24,6 @@ export class PreloaderScene extends Scene {
   }
 
   create() {
-    this.scene.start("SplashScene");
+    this.scene.start("Splash");
   }
 }

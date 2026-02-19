@@ -1,10 +1,9 @@
-import { AUTO, Game } from "phaser";
-import { PreloaderScene } from "./scenes/PreloaderScene";
-import { SplashScene } from "./scenes/SplashScene";
-import { GameScene } from "./scenes/GameScene";
+import Preloader from "./scenes/Preloader";
+import Splash from "./scenes/Splash";
+import Game from "./scenes/Game";
 
 const config = {
-  type: AUTO,
+  type: Phaser.AUTO,
   width: 1024,
   height: 1024,
   parent: "game-container",
@@ -17,11 +16,11 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [PreloaderScene, SplashScene, GameScene],
+  scene: [Preloader, Splash, Game],
 };
 
 const StartGame = (parent) => {
-  return new Game({ ...config, parent });
+  return new Phaser.Game({ ...config, parent });
 };
 
 export default StartGame;

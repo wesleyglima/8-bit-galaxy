@@ -1,18 +1,22 @@
-import { Scene } from "phaser";
+import Phaser from "phaser";
 
-export class GameScene extends Scene {
+export default class Game extends Phaser.Scene {
   constructor() {
-    super("GameScene");
-  }
+    super("Game");
 
-  init() {
-    this.gameHeight = this.game.config.height;
-    this.gameWidth = this.game.config.width;
     this.asteroidSpawnDelay = 500;
     this.spaceshipVelocityX = 1200;
     this.missileVelocity = 900;
     this.asteroidVelocity = 250;
     this.score = 0;
+  }
+
+  get gameHeight() {
+    return this.game.config.height;
+  }
+
+  get gameWidth() {
+    return this.game.config.width;
   }
 
   create() {
@@ -147,7 +151,7 @@ export class GameScene extends Scene {
       this.asteroids,
       this.onMissileHitAsteroid,
       null,
-      this
+      this,
     );
 
     this.physics.add.collider(
@@ -155,7 +159,7 @@ export class GameScene extends Scene {
       this.spaceship,
       this.onAsteroidHitSpaceship,
       null,
-      this
+      this,
     );
   }
 
@@ -226,7 +230,7 @@ export class GameScene extends Scene {
           color: "#FFFFFF",
           fontSize: 42,
           fontStyle: "bold",
-        }
+        },
       )
       .setOrigin(0.5, 0)
       .setDepth(9999)
