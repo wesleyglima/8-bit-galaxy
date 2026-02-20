@@ -3,20 +3,16 @@ import Phaser from "phaser";
 export default class Game extends Phaser.Scene {
   constructor() {
     super("Game");
+  }
 
+  init() {
+    this.gameHeight = this.game.config.height;
+    this.gameWidth = this.game.config.width;
     this.asteroidSpawnDelay = 500;
     this.spaceshipVelocityX = 1200;
     this.missileVelocity = 900;
     this.asteroidVelocity = 250;
     this.score = 0;
-  }
-
-  get gameHeight() {
-    return this.game.config.height;
-  }
-
-  get gameWidth() {
-    return this.game.config.width;
   }
 
   create() {

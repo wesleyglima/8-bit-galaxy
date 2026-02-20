@@ -1,5 +1,4 @@
 import Preloader from "./scenes/Preloader";
-import Splash from "./scenes/Splash";
 import Game from "./scenes/Game";
 
 const config = {
@@ -16,7 +15,7 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-  scene: [Preloader, Splash, Game],
+  scene: [Preloader, Game],
 };
 
 const StartGame = (parent) => {
